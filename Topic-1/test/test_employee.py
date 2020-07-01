@@ -18,7 +18,7 @@ class MyTestCase(unittest.TestCase):
         start_date = datetime.datetime(2013, 1, 14)
         s_employee = e.Employee(lname='Skyberg',
                                 fname='Mike',
-                                address='123 Heathrow Drive Ames, Iowa',
+                                address='123 Heathrow Drive, Ames, Iowa',
                                 phone='515-515-5551',
                                 salaried=True,
                                 s_date=start_date,
@@ -31,7 +31,7 @@ class MyTestCase(unittest.TestCase):
         start_date = datetime.datetime(2013, 1, 14)
         s_employee = e.Employee(lname='Skyberg',
                                 fname='Mike',
-                                address='123 Heathrow Drive Ames, Iowa',
+                                address='123 Heathrow Drive, Ames, Iowa',
                                 phone='515-515-5551',
                                 salaried=False,
                                 s_date=start_date,
