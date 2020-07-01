@@ -8,7 +8,7 @@ Purpose:
 
 
 class Invoice(object):
-    def __init__(self):
+    def __init__(self, inv_id, c_id, lname, fname, phone, addr, items={}):
         """
         Invoice Class Constructor
 
@@ -20,7 +20,13 @@ class Invoice(object):
         :param addr: customer address
         :param items: dictionary of items on the order with price
         """
-        pass
+        self.invoice_id = inv_id
+        self.customer_id = c_id
+        self.last_name = lname
+        self.first_name = fname
+        self.phone_number = phone
+        self.address = addr
+        self.items_with_price = items
 
     def add_item(self):
         """
@@ -37,7 +43,9 @@ class Invoice(object):
         pass
 
     def __str__(self):
-        pass
+        return f'Invoice#: {self.invoice_id}\n{self.first_name} ' \
+               f'{self.last_name}, Customer#: {self.customer_id}\n' \
+               f'{self.address}\n{self.phone_number}\n{self.items_with_price}'
 
     def __repr__(self):
         pass
