@@ -60,7 +60,8 @@ class Employee(object):
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}\n{self.address}\n' \
-               f'{self.phone_number}\n{self.start_date}\n{self.salary}'
+               f'{self.phone_number}\nSalaried: {self.salaried}\n' \
+               f'{self.start_date}\n{self.salary}'
 
     def __repr__(self):
         return f'last_name = {self.last_name}\n' \
