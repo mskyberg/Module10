@@ -19,7 +19,10 @@ class Customer(object):
         :param phone: Customer Phone Number
         :param addr: Customer address
         """
-        self.customer_id = c_id
+        if isinstance(c_id, int):
+            self.customer_id = c_id
+        else:
+            raise AttributeError(f'Invalid Customer ID: {c_id}')
         self.last_name = lname
         self.first_name = fname
         self.phone_number = phone
@@ -43,11 +46,27 @@ class Customer(object):
                f'{self.phone_number}'
 
     def __str__(self):
-        pass
+        return f'{self.customer_id}{self.first_name} {self.last_name}\n' \
+               f'{self.address}\n{self.phone_number}'
 
     def __repr__(self):
-        pass
+        return f'customer_id = {self.customer_id}\n' \
+               f'last_name = {self.last_name}\n' \
+               f'first_name = {self.first_name}\n' \
+               f'address = {self.address}\n' \
+               f'phone_number = {self.phone_number}\n'
 
 
 if __name__ == '__main__':
-    pass
+    customer1 = Customer(586, 'Bravo', 'Johnny', '867-5309',
+                         '134 NoWhere Ave, Ames, Iowa')
+    print(customer1.display())
+
+    try:
+        customer2 = Customer('test_string_id', 'name1', 'name2', 'addr1', 'phone1')
+        # i dont really understand how you expect to print this if customer2 is undefined
+        print(customer2.display())
+    except AttributeError as err:
+        print(err)
+
+    # I handled the attribute error in the constructor of the customer class.

@@ -21,6 +21,14 @@ class MyTestCase(unittest.TestCase):
                                 addr='123 Heathrow Drive, Ames, Iowa')
         self.assertEqual(s_customer.display(), expected)
 
+    def test_invalid_customer_id(self):
+        with self.assertRaises(AttributeError):
+            n_customer = c.Customer(c_id='1234',
+                                    lname='Skyberg',
+                                    fname='Mike',
+                                    phone='515-515-5551',
+                                    addr='123 Heathrow Drive, Ames, Iowa')
+
 
 if __name__ == '__main__':
     unittest.TestCase()
