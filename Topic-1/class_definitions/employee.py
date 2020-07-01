@@ -59,11 +59,27 @@ class Employee(object):
                f'\n{earnings_string}\nStart date: {s_date}'
 
     def __str__(self):
-        pass
+        return f'{self.first_name} {self.last_name}\n{self.address}\n' \
+               f'{self.phone_number}\n{self.start_date}\n{self.salary}'
 
     def __repr__(self):
-        pass
+        return f'last_name = {self.last_name}\n' \
+               f'first_name = {self.first_name}\n' \
+               f'address = {self.address}\n' \
+               f'phone_number = {self.phone_number}\n' \
+               f'salaried bool = {self.salaried}\n' \
+               f'start_date = {self.start_date}\n' \
+               f'salary = {self.salary}\n'
 
 
 if __name__ == '__main__':
-    pass
+    start_date = datetime.datetime(2013, 1, 14)
+    s_employee = Employee(lname='Skyberg',
+                          fname='Mike',
+                          address='123 Heathrow Drive, Ames, Iowa',
+                          phone='515-515-5551',
+                          salaried=True,
+                          s_date=start_date,
+                          salary=10000)
+    print(f'__str__ override:\n{str(s_employee)}')
+    print(f'__repr__ override:\n{repr(s_employee)}')
