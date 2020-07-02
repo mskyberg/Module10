@@ -50,7 +50,7 @@ class Invoice(object):
         tax = item_sum * sales_tax
         inv += f'Tax.....${tax:.2f}\n'
         inv += f'Total.....${tax + item_sum:.2f}'
-        print(inv)
+        # print(inv)
         # returning for unit testing purposes
         return inv
 
@@ -58,9 +58,11 @@ class Invoice(object):
         """
         display the invoice object information
 
-        :returns: string of invoice object information
+        :returns: no return
         """
-        pass
+        print(f'{self.first_name} {self.last_name}, Customer#: '
+              f'{self.customer_id}\n{self.address}\n{self.phone_number}\n'
+              f'{self.create_invoice()}')
 
     def __str__(self):
         return f'Invoice#: {self.invoice_id}\n{self.first_name} ' \
@@ -83,6 +85,4 @@ if __name__ == '__main__':
     invoice.add_item({'iPad': 799.99})
     invoice.add_item({'Surface': 999.99})
     invoice.create_invoice()
-
-    print(str(invoice))
-    print(repr(invoice))
+    invoice.display()
