@@ -20,7 +20,10 @@ class Student:
         self.last_name = lname
         self.first_name = fname
         self.major = major
-        self.gpa = gpa
+        if isinstance(gpa, float) and gpa <= 4.0:
+            self.gpa = gpa
+        else:
+            raise ValueError
 
     def __str__(self):
         return f'{self.last_name}, {self.first_name} has major {self.major}' \
